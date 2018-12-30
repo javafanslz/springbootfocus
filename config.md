@@ -148,7 +148,7 @@ com.company.location=bj
 ```
    - 配置Bean
    **@PropertySource(value = "classpath:custom.properties")** 表示自定义配置的位置， **@ConfigurationProperties(prefix = "com.company")**
-   表示读取的配置前缀。
+   表示读取的配置前缀。注意如果加载多个自定义文件value中使用数组
    
 ```java
 
@@ -198,4 +198,12 @@ public class CustomConfigBeanController {
     }
 }
 ```
-    
+
+### 多环境下的配置文件
+  往往在开发、测试、现网上使用的配置文件略有不同，springboot提供一种多环境下的配置，在resources创建一个配置，格式为
+application-自定义.yml，在application.yml中配置spring.profiles.active=自定义即可。
+```properties
+spring:
+  profiles:
+    active: dev
+```
