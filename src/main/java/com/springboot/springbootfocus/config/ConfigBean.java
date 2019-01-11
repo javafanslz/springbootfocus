@@ -3,6 +3,11 @@ package com.springboot.springbootfocus.config;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 /**
  * @Author: lizhu
  * @ClassName: ConfigBean
@@ -18,6 +23,9 @@ public class ConfigBean {
     private int max;
     private String value;
     private String greeting;
+    private List<String> iplist = new ArrayList<>();
+    private Map<String,String> mapProp = new HashMap<>();
+    private Map<String,String> mapProp2 =  new HashMap<>();
 
     public String getName() {
         return name;
@@ -73,6 +81,30 @@ public class ConfigBean {
 
     public void setGreeting(String greeting) {
         this.greeting = greeting;
+    }
+
+    public List<String> getIplist() {
+        return iplist;
+    }
+
+    public void setIplist(List<String> iplist) {
+        this.iplist = iplist;
+    }
+
+    public Map<String, String> getMapProp() {
+        return mapProp;
+    }
+
+    public void setMapProp(Map<String, String> mapProp) {
+        this.mapProp = mapProp;
+    }
+
+    public Map<String, String> getMapProp2() {
+        return mapProp2;
+    }
+
+    public void setMapProp2(Map<String, String> mapProp2) {
+        this.mapProp2 = mapProp2;
     }
 
     @Override
